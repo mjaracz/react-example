@@ -34,10 +34,10 @@ main {
 }
 
 .main__input > div hr:last-child {
-  border-top: none rgb(212, 102, 0) !important;
-  border-left: none rgb(212, 102, 0) !important;
-  border-right: none rgb(212, 102, 0) !important;
-  border-bottom: 2px solid rgb(212, 102, 0) !important;
+  border-top: none #00a8ff !important;
+  border-left: none #00a8ff !important;
+  border-right: none #00a8ff !important;
+  border-bottom: 2px solid #00a8ff !important;
 }
 
 .main__button > div span {

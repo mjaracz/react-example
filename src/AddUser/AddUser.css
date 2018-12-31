@@ -33,7 +33,7 @@ main {
 }
 
 .main__input > div hr:last-child {
-  border-top: none #1c3b67 !important;
+  border-top: none #00a8ff !important;
   border-left: none #00a8ff !important;
   border-right: none #00a8ff !important;
   border-bottom: 2px solid #00a8ff !important;
