@@ -1,0 +1,15 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #050609b3;
+  overflow-x: hidden;
+  transition: all .2s ease-in-out;
+}
+
+body {
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Playfair Display SC', serif;
+}

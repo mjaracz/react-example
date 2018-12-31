@@ -1,0 +1,54 @@
+.header__appbar {
+  max-width: 100vw;
+  max-height: 89px;
+  background-color: #000;
+  border-bottom: solid #111111;
+  overflow: hidden;
+}
+
+.header__appbar--sticky {
+  position: fixed;
+  opacity: .8;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+  .header__appbar > li {
+    float: left;
+    list-style: none;
+  }
+
+  .header__appbar li:first-child {
+    margin-left: 20px;
+  }
+
+
+  .header__appbar > li:last-child {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .header__appbar > li:last-child::after {
+    clear: both;
+  }
+
+
+    .appbar__item {
+      display: block;
+      padding: 25px;
+      text-decoration: none;
+      color: #818181;
+      font-size: 18px;
+      transition: .3s ease-in-out;
+    }
+
+    .appbar__item:hover {
+      color: #f1f1f1;
+    }
+    
+@media (max-width: 720px) {
+  .header__appbar {
+    display: none;
+  }
+}
