@@ -1,8 +1,14 @@
+//@flow
 import React, { Component } from 'react';
 import './SideCard.css';
 import { Link } from 'react-router-dom';
 
-class SideCardComponent extends Component {
+type Props = {
+  sideCard: () => void,
+  menuClick: () => void
+}
+
+class SideCardComponent extends Component<Props> {
   render() {
     const { sideCard, menuClick } = this.props;
     return (

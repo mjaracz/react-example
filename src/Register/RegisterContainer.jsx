@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react';
 import RegisterComponent from './RegisterComponent';
 
@@ -5,7 +6,17 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { addUser } from "../redux/actions/dbActions";
 
-class RegisterContainer extends Component {
+type State = {
+  username: string,
+  name: string,
+  email: string,
+  website: string,
+  password: string,
+  rePassword: string,
+  correct: boolean
+}
+
+class RegisterContainer extends Component<null, State> {
   constructor(props) {
     super(props);
 

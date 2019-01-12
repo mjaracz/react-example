@@ -1,9 +1,14 @@
+//@flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import './AppBar.css';
 
-class AppBarComponent extends Component {
+type Props = {
+  sticky: boolean
+}
+
+class AppBarComponent extends Component<Props> {
   render() {
     const { sticky } = this.props;
     return (

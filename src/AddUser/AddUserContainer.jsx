@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import AddUserComponent from './AddUserComponent';
 
@@ -7,7 +8,19 @@ import { addUser }from '../redux/actions/dbActions';
 
 import './AddUser.css';
 
-class AddUserContainer extends Component {
+interface User {
+  username: string,
+  name: string,
+  email: string,
+  website: string
+}
+
+type Props = {
+  user: User,
+  addUser(body: User): User
+}
+
+class AddUserContainer extends Component<Props, User> {
   constructor(props) {
     super(props);
 

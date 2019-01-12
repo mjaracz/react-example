@@ -1,7 +1,12 @@
+//@flow
 import React, { Component } from 'react';
 import SideCardComponent from './SideCardComponent';
 
-class SideCardContainer extends Component {
+type State = {
+  sideCard: boolean
+}
+
+class SideCardContainer extends Component<null, State> {
   constructor() {
     super();
     this.state = {

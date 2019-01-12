@@ -40,13 +40,9 @@ export const deleteUser = id => dispatch => {
     .catch(message => dispatch(fetchUsersFailure(message)))
 };
 
-export const addUser = (body) => dispatch => {
+export const addUser = body => dispatch => {
   fetch("https://json-fake-user-data.herokuapp.com/users", {
     method: "POST",
-    mode: "cors",
-    caches: "no-caches",
-    credentials: "same-origin",
-    redirect: "follow",
     headers: {
       "Content-Type": "application/json"
     },

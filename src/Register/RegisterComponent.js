@@ -1,9 +1,16 @@
+//@flow
 import React, { Component } from 'react';
 import './Register.css';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-class RegisterComponent extends Component {
+type Props = {
+  onChange: () => void,
+  addUser: () => void,
+  correct: boolean
+}
+
+class RegisterComponent extends Component<Props> {
   render() {
     const { onChange, correct, addUser } = this.props;
     return(

@@ -1,8 +1,14 @@
+//@flow
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-class AddUserComponent extends Component {
+type Props = {
+  onChange: () => void
+  addUser: () => void
+}
+
+class AddUserComponent extends Component<Props> {
   render() {
     const { onChange, addUser } = this.props;
     return(

@@ -1,10 +1,15 @@
+//@flow
 import React, { Component } from 'react';
 import AppBarComponent from './AppBarComponent';
 import SideCardContainer from '../SideCard/SideCardContainer';
 import MediaQuery from 'react-responsive';
 
+type State = {
+  sideCard: boolean,
+  sticky: boolean
+}
 
-class AppBarContainer extends Component {
+class AppBarContainer extends Component<null, State> {
   constructor(props) {
     super(props);
 
@@ -14,7 +19,7 @@ class AppBarContainer extends Component {
     }
   }
 
-  menuClick = (e) => {
+  menuClick = () => {
     this.setState({
       sideCard: !this.state.sideCard
     })

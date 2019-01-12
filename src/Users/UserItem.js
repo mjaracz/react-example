@@ -1,6 +1,11 @@
+// @flow
 import React, { Component } from 'react';
 
-class UserItem extends Component {
+type Props = {
+  item: Object
+}
+
+class UserItem extends Component<Props> {
   render() {
     const {
       website, username,

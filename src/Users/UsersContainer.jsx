@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react';
 import UsersComponent from './UsersComponent';
 
@@ -7,7 +8,14 @@ import { fetchUsers, deleteUser } from "../redux/actions/dbActions";
 
 import './Users.css';
 
-class UsersContainer extends Component {
+type Props = {
+  fetchUsers: () => void,
+  deleteUser: () => void,
+  isLoading: boolean,
+  users: Object[]
+}
+
+class UsersContainer extends Component<Props> {
   deleteItem = e => {
     e.isDefaultPrevented();
     const id = e.currentTarget.attributes[2].value;

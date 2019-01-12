@@ -1,9 +1,15 @@
+//@flow
 import React, { Component } from 'react';
 import UserItem from './UserItem';
 import CircularProgress from 'material-ui/CircularProgress';
 
+type Props = {
+  deleteItem: () => void,
+  isLoading: boolean,
+  users: Object[]
+}
 
-class UsersComponent extends Component {
+class UsersComponent extends Component<Props> {
   render() {
     const { users, isLoading, deleteItem } = this.props;
     const items = users.map((item, index) =>
