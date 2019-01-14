@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
 type Props = {
-  onChange: () => void
+  onChange: () => void,
   addUser: () => void
 }
 
