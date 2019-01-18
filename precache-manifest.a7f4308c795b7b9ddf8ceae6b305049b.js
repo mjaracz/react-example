@@ -28,16 +28,16 @@ self.__precacheManifest = [
     "url": "/react-portfolio/static/js/main.badf94ad.chunk.js"
   },
   {
+    "revision": "a500ec905ddb4159ad25382712b011a8",
+    "url": "/react-portfolio/static/media/img6.a500ec90.JPG"
+  },
+  {
     "revision": "c61496d88f51c445b606632a26da2498",
     "url": "/react-portfolio/static/media/img3mini.c61496d8.JPG"
   },
   {
     "revision": "c0c873d1cbe9567c510defa2e1378ceb",
     "url": "/react-portfolio/static/media/img5.c0c873d1.JPG"
-  },
-  {
-    "revision": "a500ec905ddb4159ad25382712b011a8",
-    "url": "/react-portfolio/static/media/img6.a500ec90.JPG"
   },
   {
     "revision": "0aa5eda38187ddda767bf506527a7201",
