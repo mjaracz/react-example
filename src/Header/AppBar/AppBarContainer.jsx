@@ -48,7 +48,7 @@ class AppBarContainer extends Component<null, State> {
   };
 
   render() {
-    const { 
+    const {
       sticky,
     } = this.state;
 
