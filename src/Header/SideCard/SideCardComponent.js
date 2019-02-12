@@ -16,9 +16,9 @@ class SideCardComponent extends Component<Props> {
         <div className={ !sideCard ? "sidebar" : "sidebar sidebar--expanded" }>
           <i className="fa fa-window-close" aria-hidden="true" onClick={ menuClick }/>
           <li>
-            <Link onClick={ menuClick } to="/">About</Link>
-            <Link onClick={ menuClick } to="/users/" >Users</Link>
-            <Link onClick={ menuClick } to="/signin/">SignIn or Register</Link>
+            <Link onClick={ menuClick } to="/react-portfolio/">About</Link>
+            <Link onClick={ menuClick } to="/react-portfolio/users/" >Users</Link>
+            <Link onClick={ menuClick } to="/react-portfolio/signin/">SignIn or Register</Link>
           </li>
         </div>
         <div className="sidebar__menuIcon" onClick={ menuClick }>

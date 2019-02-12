@@ -6,7 +6,8 @@ import MediaQuery from 'react-responsive';
 
 type State = {
   sideCard: boolean,
-  sticky: boolean
+  sticky: boolean,
+  height: number
 }
 
 class AppBarContainer extends Component<null, State> {
@@ -28,14 +29,15 @@ class AppBarContainer extends Component<null, State> {
   componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll)
   };
+
   componentWillUnmount = () => {
     window.removeEventListener('scroll', this.handleScroll)
   };
 
   handleScroll = () => {
-    let height = window.innerHeight;
+    let height = window.innerHeight / 2;
     let scrollY = window.scrollY;
-    if(scrollY >= height) {
+    if(scrollY > height) {
       this.setState({
         sticky: true
       })

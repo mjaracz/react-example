@@ -6,7 +6,7 @@ import './AppBar.css';
 
 type Props = {
   sticky: boolean
-}
+};
 
 class AppBarComponent extends Component<Props> {
   render() {
@@ -14,16 +14,16 @@ class AppBarComponent extends Component<Props> {
     return (
       <nav className={sticky ? "header__appbar header__appbar--sticky" : "header__appbar"}>
         <li>
-          <Link to="/" className="appbar__item">About</Link>
+          <Link to="/react-portfolio/" className="appbar__item">About</Link>
         </li>
         <li>
-          <Link to="/users/" className="appbar__item">List of Users</Link>
+          <Link to="/react-portfolio/users/" className="appbar__item">List of Users</Link>
         </li>
         <li>
-          <Link to="/adduser/" className="appbar__item">Add new User</Link>
+          <Link to="/react-portfolio/adduser/" className="appbar__item">Add new User</Link>
         </li>
         <li>
-          <Link to="/signin" className="appbar__item">SignIn or Register</Link>
+          <Link to="/react-portfolio/signin/" className="appbar__item">SignIn or Register</Link>
         </li>
       </nav>
     )

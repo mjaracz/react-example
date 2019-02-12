@@ -1,11 +1,13 @@
 {
-  "homepage": "http://mjaracz.github.io/react-portfolio",
+  "homepage": "http://mjaracz.github.io/react-portfolio/",
   "name": "react-example",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://json-fake-user-data.herokuapp.com",
   "dependencies": {
     "ajv-keywords": "^3.2.0",
+    "gh-pages": "^2.0.1",
+    "global": "^4.3.2",
     "material-ui": "^0.20.0",
     "npx": "^10.2.0",
     "prop-types": "^15.6.1",

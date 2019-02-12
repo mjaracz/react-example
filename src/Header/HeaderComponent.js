@@ -9,11 +9,6 @@ class HeaderComponent extends Component {
           <div className="header__img header__img2" />
           <div className="header__img header__img3" />
         </div>
-        <div className="header__flex header__flex2">
-          <div className="header__img header__img4" />
-          <div className="header__img header__img5" />
-          <div className="header__img header__img6" />
-        </div>
       </div>
     )
   }

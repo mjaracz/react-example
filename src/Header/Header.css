@@ -85,18 +85,18 @@ header  {
     max-width: 100%;
   }
   
-  .header__flex1 {
+  .header__flex2 {
     display: none;
   }
 
-  .header__img5 {
+  .header__img1 {
     display: none;
   }
-  .header__img6 {
+  .header__img2 {
     display: none;
   }
   
-  .header__img4 {
+  .header__img3 {
     flex: 1;
     background-image: url('../assets/mini/img3mini.JPG');
     background-size: cover;
