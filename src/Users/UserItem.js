@@ -9,7 +9,8 @@ class UserItem extends Component<Props> {
   render() {
     const {
       website, username,
-      name, email, id
+      name, email,
+      id
     } = this.props.item;
     const { deleteItem } = this.props;
     return(

@@ -21,13 +21,13 @@ class RegisterContainer extends Component<null, State> {
     super(props);
 
     this.state = {
+      isPasswordCorrect: false,
       username: '',
-      name: '',
-      email: '',
-      website: '',
       password: '',
       rePassword: '',
-      correct: false
+      website: '',
+      email: '',
+      name: ''
     }
   };
 
@@ -38,32 +38,32 @@ class RegisterContainer extends Component<null, State> {
       [name]: value
     });
   };
-  exampleOfValidate = () => {
+  validatePassword = () => {
     const { password, rePassword } = this.state;
-    if (password === rePassword) this.setState({correct: true});
-    else this.setState({correct: false});
-    console.log(this.state.correct);
+    this.setState({ isPasswordCorrect: (password === rePassword)  });
+    this.setState({ isPasswordCorrect: !(password !== rePassword) });
   };
   addUser = () => {
-    const { name, username, email, website, correct } = this.state;
-    this.exampleOfValidate();
+    const { name, username, email, website, isPasswordCorrect } = this.state;
+    this.validatePassword();
     const data = {
-      name: name,
       username: username,
+      website: website,
       email: email,
-      website: website
+      name: name
     };
-    if(correct) this.props.addUser(data);
+    if(isPasswordCorrect) {
+      this.props.addUser(data)
+    }
   };
 
   render() {
-    const { correct } = this.state;
-    const { onChange, addUser } = this;
+    const { isPasswordCorrect } = this.state;
     return(
       <RegisterComponent
-        onChange={onChange}
-        correct={correct}
-        addUser={addUser}
+        onChange={this.onChange}
+        addUser={this.addUser}
+        correct={isPasswordCorrect}
       />
     );
   };
@@ -73,5 +73,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({
     addUser
   }, dispatch);
+
 
 export default connect(null, mapDispatchToProps)(RegisterContainer);

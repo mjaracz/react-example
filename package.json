@@ -35,7 +35,7 @@
     "chai": "^4.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
-    "flow-bin": "^0.89.0",
+    "flow-bin": "^0.94.0",
     "json-server": "^0.14.2"
   },
   "browserslist": [

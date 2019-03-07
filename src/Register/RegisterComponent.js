@@ -8,7 +8,15 @@ type Props = {
   onChange: () => void,
   addUser: () => void,
   correct: boolean
-}
+};
+
+const InputStyle = {
+  color: '#a1a1a1',
+  borderTop: 'none #00a8ff',
+  borderLeft: 'none #00a8ff',
+  borderRight: 'none #00a8ff'
+};
+
 
 class RegisterComponent extends Component<Props> {
   render() {
@@ -20,6 +28,7 @@ class RegisterComponent extends Component<Props> {
             floatingLabelText="e-mail"
             onChange={onChange}
             className="main__input"
+            inputStyle={InputStyle}
             name="email"
           />
           <TextField
@@ -27,11 +36,13 @@ class RegisterComponent extends Component<Props> {
             onChange={onChange}
             className="main__input"
             name="username"
+            inputStyle={InputStyle}
           />
           <TextField
             floatingLabelText="name"
             onChange={onChange}
             className="main__input"
+            inputStyle={InputStyle}
             name="name"
           />
           <TextField
@@ -39,21 +50,24 @@ class RegisterComponent extends Component<Props> {
             onChange={onChange}
             className="main__input"
             name="website"
+            inputStyle={InputStyle}
           />
           <TextField
             floatingLabelText="password"
-            onChange={onChange}
             type="password"
             className="main__input"
             name="password"
+            inputStyle={InputStyle}
+            onChange={onChange}
             errorText={!correct ? "password and re-password, don't have matches" : null}
             errorStyle={{color: "#959595"}}
           />
           <TextField
             floatingLabelText="re-password"
-            onChange={onChange}
-            type="password"
             className="main__input"
+            type="password"
+            onChange={onChange}
+            inputStyle={InputStyle}
             name="rePassword"
             errorText={!correct ? "password and re-password, don't have matches" : null}
             errorStyle={{color: "#959595"}}
@@ -61,9 +75,10 @@ class RegisterComponent extends Component<Props> {
           <FlatButton
             label="join us !"
             backgroundColor="#1c3b67"
-            style={{marginTop: 25}}
             className="main__button"
-            onClick={addUser}
+            style={{ marginTop: '15px' }}
+            labelStyle={{ color: '#a1a1a1' }}
+            onClick={ addUser }
           />
         </div>
       </main>

@@ -6,7 +6,15 @@ import FlatButton from 'material-ui/FlatButton';
 type Props = {
   onChange: () => void,
   addUser: () => void
-}
+};
+
+const InputStyle = {
+  color: '#a1a1a1',
+  borderTop: 'none #00a8ff',
+  borderLeft: 'none #00a8ff',
+  borderRight: 'none #00a8ff',
+};
+
 
 class AddUserComponent extends Component<Props> {
   render() {
@@ -16,24 +24,28 @@ class AddUserComponent extends Component<Props> {
         <div>
           <TextField
             floatingLabelText="new username"
+            inputStyle={InputStyle}
             name="username"
             onChange={onChange}
             className="main__input"
           />
           <TextField
             floatingLabelText="new name"
+            inputStyle={InputStyle}
             name="name"
             onChange={onChange}
             className="main__input"
           />
           <TextField
             floatingLabelText="new email"
+            inputStyle={InputStyle}
             name="email"
             onChange={onChange}
             className="main__input"
           />
           <TextField
             floatingLabelText="new website"
+            inputStyle={InputStyle}
             name="website"
             onChange={onChange}
             className="main__input"
@@ -41,7 +53,8 @@ class AddUserComponent extends Component<Props> {
           <FlatButton
             label="Add User"
             backgroundColor="#1c3b67"
-            style={{marginTop: 25}}
+            labelStyle={{ color: "#bbbbbb" }}
+            style={{ marginTop: 25 }}
             className="main__button"
             onClick={ addUser }
           />

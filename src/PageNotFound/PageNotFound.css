@@ -1,4 +1,3 @@
-
 main {
     width: 80vw;
     background-color: #0e0e0e ;
@@ -8,19 +7,10 @@ main {
     border-radius: 8px;
 }
 
-main > h1 {
+.main__title {
     text-align: center;
     font-size: 48px;
     letter-spacing: 2.5px;
-}
-
-.main__text.main__text1{
-    margin: 32px;
-    text-align: justify;
-    font-size: 18px;
-}
-.main__text.main__text1 > p:first-child {
-    margin-bottom: 25px;
 }
 
 
@@ -33,20 +23,11 @@ main > h1 {
         padding: 25px ;
         border-radius: 8px;
     }
-    main > h1 {
+    .main__title {
         margin: 12px 0;
         text-align: center;
         font-size: 48px;
         letter-spacing: 2.5px;
-    }
-    .main__text.main__text1 {
-        text-align: justify;
-        padding: 12px;
-        margin: 0;
-        font-size: 18px;
-    }
-    .main__text.main__text1 > p:first-child {
-        margin-bottom: 25px;
     }
 }
 

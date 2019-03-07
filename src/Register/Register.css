@@ -21,37 +21,6 @@ main {
   color: #a1a1a1 !important;
 }
 
-
-.main__input > input {
-  color: #a1a1a1 !important;
-}
-
-.main__input > div hr:first-child {
-  border-top: none rgb(158, 158, 158) !important;
-  border-left: none rgb(158, 158, 158) !important;
-  border-right: none rgb(158, 158, 158) !important;
-  border-bottom: 1px solid rgb(158, 158, 158) !important;
-}
-
-.main__input > div hr:last-child {
-  border-top: none #00a8ff !important;
-  border-left: none #00a8ff !important;
-  border-right: none #00a8ff !important;
-  border-bottom: 2px solid #00a8ff !important;
-}
-
-.main__button > div span {
-  color: #ffffff !important;
-}
-
-.main__form > div a {
-  display: block;
-  text-decoration: none;
-  color: #7d7d7d;
-  margin-top: 1.6em;
-  transition: .3s ease-in-out;
-}
-
-.main__form > div a:hover {
-  color: rgb(212, 102, 0) ;
+.main__button:hover {
+  background-color: #585858;
 }

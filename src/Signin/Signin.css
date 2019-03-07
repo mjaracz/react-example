@@ -17,33 +17,7 @@ main {
   margin: 0 auto;
 }
 
-.main__input label {
-  color: #a1a1a1 !important;
-}
-
-.main__input > input {
-  color: #a1a1a1 !important;
-}
-
-.main__input > div hr:first-child {
-  border-top: none rgb(158, 158, 158) !important;
-  border-left: none rgb(158, 158, 158) !important;
-  border-right: none rgb(158, 158, 158) !important;
-  border-bottom: 1px solid rgb(158, 158, 158) !important;
-}
-
-.main__input > div hr:last-child {
-  border-top: none #00a8ff !important;
-  border-left: none #00a8ff !important;
-  border-right: none #00a8ff !important;
-  border-bottom: 2px solid #00a8ff !important;
-}
-
-.main__button > div span {
-  color: #d7dcd7 !important;
-}
-
-.main__form > div a {
+.form__link {
   display: block;
   text-decoration: none;
   color: #7d7d7d;
@@ -51,6 +25,6 @@ main {
   transition: .3s ease-in-out;
 }
 
-.main__form > div a:hover {
+.form__link:hover {
   color: #00a8ff;
 }

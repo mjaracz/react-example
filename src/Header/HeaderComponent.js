@@ -4,7 +4,7 @@ class HeaderComponent extends Component {
   render() {
     return (
       <div className="header__container">
-        <div className="header__flex header__flex1">
+        <div className="header__flex">
           <div className="header__img header__img1" />
           <div className="header__img header__img2" />
           <div className="header__img header__img3" />
