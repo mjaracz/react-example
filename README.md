@@ -1,6 +1,6 @@
 First, to prepare our environment download and install node, npm or yarn from side
-> https://nodejs.org/en/
-> https://yarnpkg.com/en/
+> https://nodejs.org/en/ <br/>
+> https://yarnpkg.com/en/ <br/>
 
 Next, install dependency by typing, in the your project directory:
 > yarn install 
