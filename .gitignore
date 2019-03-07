@@ -2,7 +2,7 @@
 
 /build
 
-/.idea
+/src/.idea
 
 npm-debug.log
 package-lock.json
