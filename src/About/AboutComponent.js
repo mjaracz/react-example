@@ -5,8 +5,8 @@ class AboutComponent extends Component {
   render() {
     return(
       <main>
-        <h1 className="main__title">About</h1>
-        <div className="main__text">
+        <h1 className='main__title'>About</h1>
+        <div className='main__text'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum pellentesque arcu quis faucibus.
             Vivamus fringilla vulputate aliquam. Ut ut turpis varius, varius nulla a, viverra mi. Praesent maximus eleifend orci et ultrices.

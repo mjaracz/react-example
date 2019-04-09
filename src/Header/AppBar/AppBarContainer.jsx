@@ -4,10 +4,9 @@ import React, { Component } from 'react';
 import AppBarComponent from './AppBarComponent';
 import SideCardContainer from '../SideCard/SideCardContainer';
 import MediaQuery from 'react-responsive';
-import { imgHeight } from "../../redux/actions/userAction";
-import { bindActionCreators } from "redux";
-
-import { connect } from "react-redux";
+import { imgHeight } from '../../redux/actions/userAction';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 type State = {
   sticky: boolean,
@@ -33,11 +32,11 @@ class AppBarContainer extends Component<Props, State> {
     this.props.imgHeight(height);
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   };
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
   };
 
@@ -58,7 +57,6 @@ class AppBarContainer extends Component<Props, State> {
 
   render() {
     const {sticky} = this.state;
-
     return(
       <div>
         <AppBarComponent
