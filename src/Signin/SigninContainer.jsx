@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import SigninComponent from './SigninComponent';
+import {connect} from "react-redux";
+import {postUser} from "../redux/actions/postUser";
+import {bindActionCreators} from "redux";
 
 class SigninContainer extends Component {
   constructor(props) {
@@ -24,14 +27,28 @@ class SigninContainer extends Component {
       [e.target.name]: e.target.value
     })
   };
+  onClick = () => {
+    const { username, password } = this.state;
+    const body = {
+      username: username,
+      password: password
+    };
+    this.props.postUser(body)
+  };
 
   render(){
     const {textFields} = this.state;
     return <SigninComponent
+      onClick={this.onClick}
       onChange={this.onChange}
       textFields={textFields}
     />
   }
 }
 
-export default SigninContainer;
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({
+    postUser
+  }, dispatch);
+
+export default connect(null, mapDispatchToProps)(SigninContainer);

@@ -2,56 +2,54 @@
 import React, { Component } from 'react';
 import UsersComponent from './UsersComponent';
 
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
-import { fetchUsers, deleteUser } from "../redux/actions/dbActions";
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {getUsers} from '../redux/actions/getUsers';
+import {deleteUser} from '../redux/actions/deleteUser';
 
 import './Users.css';
 
 type Props = {
-  fetchUsers: () => void,
-  deleteUser: () => void,
+  getUsers(): void,
+  deleteUser(): void,
   isLoading: boolean,
   users: Object[]
 }
 
 class UsersContainer extends Component<Props> {
-  deleteItem = e => {
-    e.isDefaultPrevented();
+  onClickDelete = e => {
+    e.preventDefault();
     const id = e.currentTarget.attributes[2].value;
     this.props.deleteUser(id);
-    this.props.fetchUsers();
+    this.props.getUsers();
   };
-
   componentDidMount() {
-    this.props.fetchUsers();
-  }
-
+    this.props.getUsers();
+  };
   render() {
-    const { users, isLoading } = this.props;
-    const { deleteItem } = this;
+    const {users, isLoading} = this.props;
     return(
       <div>
         <UsersComponent
           users={users}
           isLoading={isLoading}
-          deleteItem={deleteItem}
+          deleteItem={this.onClickDelete}
         />
       </div>
     )
-  }
+  };
 }
 
 const mapStateToProps = (state) => ({
-  users: state.db.users,
-  isLoading: state.db.isLoading,
-  error: state.db.error
+  users: state.getUser.users,
+  isLoading: state.getUser.isLoading,
+  error: state.getUser.error
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    fetchUsers,
+    getUsers,
     deleteUser
   }, dispatch);
 
-export default connect( mapStateToProps, mapDispatchToProps )( UsersContainer );
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);

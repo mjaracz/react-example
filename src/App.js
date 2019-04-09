@@ -21,8 +21,8 @@ class App extends Component {
               <Route exact path='/react-portfolio/' component={AboutComponent}/>
               <Route path='/react-portfolio/users/' component={UsersContainer}/>
               <Route path='/react-portfolio/signin/' component={SigninContainer}/>
-              <Route path='/react-portfolio/register/' component={RegisterContainer}/>
               <Route path='/react-portfolio/adduser/' component={AddUserContainer}/>
+              <Route path='/react-portfolio/register/' component={RegisterContainer}/>
               <Route component={PageNotFoundComponent}/>
             </Switch>
           </div>

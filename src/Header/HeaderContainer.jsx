@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeaderComponent from './HeaderComponent';
 import AppBarContainer from './AppBar/AppBarContainer';
+import HeaderComponent from './HeaderComponent';
 import './Header.css';
 
 

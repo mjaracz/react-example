@@ -4,21 +4,13 @@ import React, { Component } from 'react';
 import AppBarComponent from './AppBarComponent';
 import SideCardContainer from '../SideCard/SideCardContainer';
 import MediaQuery from 'react-responsive';
-import { imgHeight } from '../../redux/actions/userAction';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 type State = {
-  sticky: boolean,
-  height: number
+  sticky: boolean
 };
 
-type Props = {
-  imgHeightValue: number,
-  imgHeight(h: number): Object
-};
 
-class AppBarContainer extends Component<Props, State> {
+class AppBarContainer extends Component<null, State> {
   constructor(props) {
     super(props);
 
@@ -26,24 +18,16 @@ class AppBarContainer extends Component<Props, State> {
       sticky: false
     }
   }
-
-  componentDidUpdate() {
-    let height = document.querySelector('.header__img').clientHeight;
-    this.props.imgHeight(height);
-  }
-
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   };
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
   };
-
   handleScroll = () => {
-    const { imgHeightValue } = this.props;
+    let height = document.querySelector('.header__img').clientHeight;
     let scrollY = window.scrollY;
-    if(scrollY > imgHeightValue + 100) {
+    if(scrollY > height + 100) {
       this.setState({
         sticky: true
       });
@@ -70,13 +54,5 @@ class AppBarContainer extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = state => ({
-  imgHeightValue: state.user.imgHeight
-});
 
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-        imgHeight
-    }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppBarContainer);
+export default AppBarContainer;

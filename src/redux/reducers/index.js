@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
-import { dbReducer } from './dbReducer';
-import { userReducer } from "./userReducer";
+import {combineReducers} from 'redux';
+import {getReducer} from './getReducer';
+import {postReducer} from './postReducer';
+import {deleteReducer} from './deleteReducer';
 
 export const rootReducer = combineReducers({
-  db: dbReducer,
-  user: userReducer
+  getUser: getReducer,
+  postUser: postReducer,
+  deleteUser: deleteReducer
 });

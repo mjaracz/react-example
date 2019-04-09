@@ -1,7 +1,8 @@
 import {
-  FETCH_USERS, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE,
-  DELETE_USER, USER_RES }
-  from '../actions/dbActions'
+  GET_USERS,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE
+} from '../actions/getUsers'
 
 const InitialState = {
   users: [],
@@ -10,9 +11,9 @@ const InitialState = {
   user: {}
 };
 
-export const dbReducer = (state=InitialState, action) => {
+export const getReducer = (state=InitialState, action) => {
   switch(action.type) {
-    case FETCH_USERS: {
+    case GET_USERS: {
       return {
         ...state,
         isLoading: true
@@ -28,21 +29,8 @@ export const dbReducer = (state=InitialState, action) => {
     case FETCH_USERS_FAILURE: {
       return {
         ...state,
-        isLoading: true,
-        error: action.payload
-      }
-    }
-    case DELETE_USER: {
-      return {
-        ...state,
-        isLoading: true,
-      }
-    }
-    case USER_RES: {
-      return {
-        ...state,
         isLoading: false,
-        user: action.payload
+        error: action.payload
       }
     }
     default: {

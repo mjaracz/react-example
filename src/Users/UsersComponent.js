@@ -11,7 +11,7 @@ type Props = {
 
 class UsersComponent extends Component<Props> {
   render() {
-    const { users, isLoading, deleteItem } = this.props;
+    const {users, isLoading, deleteItem} = this.props;
     const items = users.map((item, index) =>
       <UserItem
         key={index}

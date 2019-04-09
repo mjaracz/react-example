@@ -4,21 +4,21 @@ import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
 type Props = {
-  onChange: () => void,
-  addUser: () => void
+  onChange(): void,
+  onClickAddUser(): void
 };
 
 const InputStyle = {
   color: '#a1a1a1',
-  borderTop: 'none #00a8ff',
-  borderLeft: 'none #00a8ff',
-  borderRight: 'none #00a8ff',
+  borderTop: '#00a8ff',
+  borderLeft: '#00a8ff',
+  borderRight: '#00a8ff',
 };
 
 
 class AddUserComponent extends Component<Props> {
   render() {
-    const { onChange, addUser } = this.props;
+    const {onChange, onClickAddUser} = this.props;
     return(
       <main className="main__form">
         <div>
@@ -56,7 +56,7 @@ class AddUserComponent extends Component<Props> {
             labelStyle={{ color: "#bbbbbb" }}
             style={{ marginTop: 25 }}
             className="main__button"
-            onClick={ addUser }
+            onClick={onClickAddUser}
           />
         </div>
       </main>

@@ -27,10 +27,10 @@ class SigninComponent extends Component<Props> {
           {inputs}
           <FlatButton
             label="Sign In"
-            labelStyle={{ color: '#a1a1a1' }} backgroundColor="#1c3b67"
-            style={{ marginTop: '25px' }} className="main__button"
+            labelStyle={{color: '#a1a1a1'}} backgroundColor="#1c3b67"
+            style={{marginTop: '25px'}} className="main__button"
           />
-          <Link to="/react-portfolio/register/" className={"form__link"} >Don't have account yet, register here.</Link>
+          <Link to="/react-portfolio/register/" className="form__link" >Don't have account yet, register here.</Link>
         </div>
       </main>
     )

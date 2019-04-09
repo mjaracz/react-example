@@ -6,10 +6,8 @@ import App from './App';
 
 import './index.css';
 
-import { Provider } from 'react-redux';
-import { configureStore } from './redux/store';
-
-const store = configureStore();
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
 
 ReactDOM.render(
   <MuiThemeProvider>

@@ -2,22 +2,22 @@
 import React, { Component } from 'react';
 import AddUserComponent from './AddUserComponent';
 
-import { bindActionCreators} from 'redux';
-import { connect } from 'react-redux';
-import { addUser }from '../redux/actions/dbActions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {postUser} from '../redux/actions/postUser';
 
 import './AddUser.css';
+import {Redirect} from "react-router-dom";
 
 interface User {
   username: string,
-  name: string,
+  website: string,
   email: string,
-  website: string
+  name: string
 }
 
 type Props = {
-  user: User,
-  addUser(body: User): User
+  postUser(body: User): User
 }
 
 class AddUserContainer extends Component<Props, User> {
@@ -26,9 +26,10 @@ class AddUserContainer extends Component<Props, User> {
 
     this.state = {
       username: '',
-      name: '',
+      website: '',
       email: '',
-      website: ''
+      name: '',
+      redirect: false
     }
   };
   onChange = (e) => {
@@ -38,33 +39,35 @@ class AddUserContainer extends Component<Props, User> {
       [name]: value
     });
   };
-  addUser = () => {
+  onClickAddUser = () => {
     const { username, name, email, website } = this.state;
     const data = {
       username: username,
-      name: name,
+      website: website,
       email: email,
-      website: website
+      name: name
     };
-
-    this.props.addUser(data);
+    this.props.postUser(data);
+    this.setState({
+      redirect: true
+    });
   };
-
   render() {
-    const { onChange, addUser } = this;
-    return(
-      <AddUserComponent onChange={ onChange } addUser={ addUser }/>
+    const {redirect} = this.state;
+    return (
+      !redirect
+        ? <AddUserComponent
+            onChange={this.onChange}
+            onClickAddUser={this.onClickAddUser}
+          />
+        : <Redirect to='/react-portfolio/users'/>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  user: state.db.user
-});
-
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-    addUser
+    postUser
   }, dispatch);
 
-export default connect( mapStateToProps , mapDispatchToProps )( AddUserContainer );
+export default connect(null, mapDispatchToProps)(AddUserContainer);
