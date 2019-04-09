@@ -59,7 +59,6 @@ class RegisterContainer extends Component<null, State> {
   validatePassword = () => {
     const { password, rePassword } = this.state;
     this.setState({isPasswordCorrect: (password === rePassword)});
-    console.log(this.state.isPasswordCorrect);
   };
   addUser = () => {
     const { name, username, email, website, isPasswordCorrect } = this.state;
@@ -79,10 +78,10 @@ class RegisterContainer extends Component<null, State> {
     const { isPasswordCorrect, texFields } = this.state;
     return(
       <RegisterComponent
-        onChange={this.onChange}
-        addUser={this.addUser}
         correct={isPasswordCorrect}
+        onChange={this.onChange}
         textFields={texFields}
+        addUser={this.addUser}
       />
     );
   };

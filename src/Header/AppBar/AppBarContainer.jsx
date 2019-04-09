@@ -44,10 +44,10 @@ class AppBarContainer extends Component<Props, State> {
   handleScroll = () => {
     const { imgHeightValue } = this.props;
     let scrollY = window.scrollY;
-    if(scrollY > imgHeightValue) {
+    if(scrollY > imgHeightValue + 100) {
       this.setState({
         sticky: true
-      })
+      });
     }
     else {
       this.setState({
@@ -57,9 +57,7 @@ class AppBarContainer extends Component<Props, State> {
   };
 
   render() {
-    const {
-      sticky,
-    } = this.state;
+    const {sticky} = this.state;
 
     return(
       <div>
