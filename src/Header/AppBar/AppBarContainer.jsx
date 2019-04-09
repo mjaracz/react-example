@@ -10,7 +10,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 type State = {
-  sideCard: boolean,
   sticky: boolean,
   height: number
 };
@@ -25,16 +24,9 @@ class AppBarContainer extends Component<Props, State> {
     super(props);
 
     this.state = {
-      sideCard: false,
       sticky: false
     }
   }
-
-  menuClick = () => {
-    this.setState({
-      sideCard: !this.state.sideCard
-    })
-  };
 
   componentDidUpdate() {
     let height = document.querySelector('.header__img').clientHeight;

@@ -37,7 +37,6 @@ class AddUserContainer extends Component<Props, User> {
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   };
   addUser = () => {
     const { username, name, email, website } = this.state;

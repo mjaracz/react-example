@@ -1,45 +1,30 @@
 //@flow
 import React, { Component } from 'react';
 import './Signin.css';
-import TextField from 'material-ui/TextField';
+import {InputText} from './textField';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  onUpdateInput: () => void
-};
-
-const InputStyle = {
-  color: '#a1a1a1',
-  borderTopColor: '#00a8ff',
-  borderLeftColor: '#00a8ff',
-  borderRightColor: '#00a8ff'
+  onChange(): void,
+  textFields: {value: string}[]
 };
 
 
 class SigninComponent extends Component<Props> {
   render() {
-    const { onUpdateInput } = this.props;
+    const { onChange, textFields } = this.props;
+    const inputs = textFields.map((field, index) => {
+      return <InputText
+        key={index}
+        value={field.value}
+        onChange={onChange}
+      />
+    });
     return(
       <main className="main__form">
         <div>
-          <TextField
-            floatingLabelText="username or email"
-            onChange={onUpdateInput}
-            className="main__input"
-            floatingLabelFocusStyle={{ color: '#00a8ff' }}
-            inputStyle={InputStyle}
-            name="email"
-          />
-          <TextField
-            floatingLabelText="password"
-            type="password"
-            className="main__input"
-            floatingLabelFocusStyle={{ color: '#00a8ff' }}
-            onChange={onUpdateInput}
-            inputStyle={InputStyle}
-            name="password"
-          />
+          {inputs}
           <FlatButton
             label="Sign In"
             labelStyle={{ color: '#a1a1a1' }} backgroundColor="#1c3b67"

@@ -1,34 +1,35 @@
 main {
-    width: 80vw;
-    background-color: #0e0e0e ;
-    color:  rgb(218, 218, 218);
-    margin: 100px auto;
-    padding: 25px ;
-    border-radius: 8px;
+  width: 80vw;
+  background-color: #0e0e0e;
+  color: rgb(218, 218, 218);
+  margin: 100px auto;
+  padding: 25px;
+  border-radius: 8px;
 }
 
 .main__title {
-    text-align: center;
-    font-size: 48px;
-    letter-spacing: 2.5px;
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: 2.5px;
 }
 
 
 @media screen and (max-width: 720px) {
-    main {
-        width: 80vw;
-        background-color: #0e0e0e ;
-        color:  rgb(218, 218, 218);
-        margin-top: 23px ;
-        padding: 25px ;
-        border-radius: 8px;
-    }
-    .main__title {
-        margin: 12px 0;
-        text-align: center;
-        font-size: 48px;
-        letter-spacing: 2.5px;
-    }
+  main {
+    width: 80vw;
+    background-color: #0e0e0e;
+    color: rgb(218, 218, 218);
+    margin-top: 23px;
+    padding: 25px;
+    border-radius: 8px;
+  }
+
+  .main__title {
+    margin: 12px 0;
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 2.5px;
+  }
 }
 
 

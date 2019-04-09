@@ -4,8 +4,8 @@ import './SideCard.css';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  sideCard: () => void,
-  menuClick: () => void
+  sideCard(): void,
+  menuClick(): void
 }
 
 class SideCardComponent extends Component<Props> {

@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import RegisterComponent from './RegisterComponent';
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { addUser } from "../redux/actions/dbActions";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addUser } from '../../redux/actions/dbActions';
+
 
 type State = {
   username: string,
@@ -21,13 +22,30 @@ class RegisterContainer extends Component<null, State> {
     super(props);
 
     this.state = {
-      isPasswordCorrect: false,
+      isPasswordCorrect: true,
       username: '',
       password: '',
       rePassword: '',
       website: '',
       email: '',
-      name: ''
+      name: '',
+      texFields: [
+        {
+          value: 'username'
+        },
+        {
+          value: 'email'
+        },
+        {
+          value: 'website'
+        },
+        {
+          value: 'password'
+        },
+        {
+          value: 'password'
+        }
+      ]
     }
   };
 
@@ -40,8 +58,8 @@ class RegisterContainer extends Component<null, State> {
   };
   validatePassword = () => {
     const { password, rePassword } = this.state;
-    this.setState({ isPasswordCorrect: (password === rePassword)  });
-    this.setState({ isPasswordCorrect: !(password !== rePassword) });
+    this.setState({isPasswordCorrect: (password === rePassword)});
+    console.log(this.state.isPasswordCorrect);
   };
   addUser = () => {
     const { name, username, email, website, isPasswordCorrect } = this.state;
@@ -58,12 +76,13 @@ class RegisterContainer extends Component<null, State> {
   };
 
   render() {
-    const { isPasswordCorrect } = this.state;
+    const { isPasswordCorrect, texFields } = this.state;
     return(
       <RegisterComponent
         onChange={this.onChange}
         addUser={this.addUser}
         correct={isPasswordCorrect}
+        textFields={texFields}
       />
     );
   };
